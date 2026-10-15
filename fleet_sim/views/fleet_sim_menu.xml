@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_fleet_sim_root"
+        name="SIM Cards"
+        parent="fleet.fleet_configuration"
+        sequence="80"
+        groups="fleet_sim.group_sim_administrator"
+    />
+    <menuitem
+        id="menu_fleet_sim_card"
+        name="SIM Cards"
+        parent="menu_fleet_sim_root"
+        action="action_fleet_sim_card"
+        sequence="10"
+        groups="fleet_sim.group_sim_administrator"
+    />
+</odoo>

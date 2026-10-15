@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_fleet_sim_card_list" model="ir.ui.view">
+        <field name="name">fleet.sim.card.list</field>
+        <field name="model">fleet.sim.card</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="display_name" />
+                <field name="phone_number" />
+                <field name="imei" />
+                <field name="carrier" />
+                <field name="contract_expiration_date" />
+                <field name="billing_period" />
+                <field name="contract_amount" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_fleet_sim_card_form" model="ir.ui.view">
+        <field name="name">fleet.sim.card.form</field>
+        <field name="model">fleet.sim.card</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="display_name" readonly="1" />
+                            <field name="phone_number" />
+                            <field name="imei" />
+                            <field name="carrier" />
+                        </group>
+                        <group>
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                            <field name="contract_date" />
+                            <field name="contract_expiration_date" />
+                            <field name="billing_period" />
+                            <field name="contract_amount" />
+                            <field name="currency_id" invisible="1" />
+                            <field name="active" />
+                        </group>
+                    </group>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record id="view_fleet_sim_card_search" model="ir.ui.view">
+        <field name="name">fleet.sim.card.search</field>
+        <field name="model">fleet.sim.card</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="display_name" />
+                <field name="phone_number" />
+                <field name="imei" />
+                <field name="carrier" />
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active', '=', False)]"
+                />
+                <filter
+                    string="Monthly"
+                    name="monthly"
+                    domain="[('billing_period', '=', 'monthly')]"
+                />
+                <filter
+                    string="Annual"
+                    name="annual"
+                    domain="[('billing_period', '=', 'annual')]"
+                />
+                <separator />
+                <filter
+                    string="Carrier"
+                    name="group_carrier"
+                    context="{'group_by': 'carrier'}"
+                />
+                <filter
+                    string="Billing Period"
+                    name="group_billing_period"
+                    context="{'group_by': 'billing_period'}"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_fleet_sim_card" model="ir.actions.act_window">
+        <field name="name">SIM Cards</field>
+        <field name="res_model">fleet.sim.card</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_fleet_sim_card_search" />
+    </record>
+</odoo>
