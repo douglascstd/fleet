@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_traccar_geofence_list" model="ir.ui.view">
+        <field name="name">traccar.geofence.list</field>
+        <field name="model">traccar.geofence</field>
+        <field name="arch" type="xml">
+            <list>
+                <header>
+                    <button
+                        name="action_sync_geofences"
+                        string="Sync Geofences"
+                        type="object"
+                        class="btn-primary"
+                        display="always"
+                    />
+                </header>
+                <field name="name" />
+                <field name="traccar_id" />
+                <field name="description" />
+                <field name="event_count" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="active" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_traccar_geofence_form" model="ir.ui.view">
+        <field name="name">traccar.geofence.form</field>
+        <field name="model">traccar.geofence</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="action_sync_geofences"
+                        string="Sync Geofences"
+                        type="object"
+                        class="btn-primary"
+                    />
+                </header>
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+                        <button
+                            name="action_view_events"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-bell"
+                        >
+                            <field
+                                name="event_count"
+                                widget="statinfo"
+                                string="Events"
+                            />
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="traccar_id" readonly="1" />
+                            <field name="calendar_id" readonly="1" />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                            <field name="active" />
+                        </group>
+                        <group>
+                            <field name="description" />
+                        </group>
+                    </group>
+                    <group string="Area">
+                        <field name="area" nolabel="1" />
+                    </group>
+                    <group string="Attributes">
+                        <field name="attributes" nolabel="1" />
+                    </group>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record id="view_traccar_geofence_search" model="ir.ui.view">
+        <field name="name">traccar.geofence.search</field>
+        <field name="model">traccar.geofence</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="traccar_id" />
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active', '=', False)]"
+                />
+                <filter
+                    string="Company"
+                    name="group_company"
+                    context="{'group_by': 'company_id'}"
+                    groups="base.group_multi_company"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_traccar_geofence" model="ir.actions.act_window">
+        <field name="name">Traccar Geofences</field>
+        <field name="res_model">traccar.geofence</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_traccar_geofence_search" />
+    </record>
+
+    <record id="traccar_geofence_action_sync" model="ir.actions.server">
+        <field name="name">Sync Traccar Geofences</field>
+        <field name="model_id" ref="model_traccar_geofence" />
+        <field name="binding_model_id" ref="model_traccar_geofence" />
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_sync_geofences()</field>
+    </record>
+
+    <record id="traccar_geofence_action_sync_global" model="ir.actions.server">
+        <field name="name">Sync Traccar Geofences</field>
+        <field name="model_id" ref="model_traccar_geofence" />
+        <field name="state">code</field>
+        <field
+            name="code"
+        >action = env['traccar.geofence'].action_sync_geofences()</field>
+    </record>
+</odoo>

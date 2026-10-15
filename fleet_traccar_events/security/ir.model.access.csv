@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_traccar_geofence_admin,traccar.geofence.admin,model_traccar_geofence,fleet_traccar_integration.group_traccar_administrator,1,1,1,1
+access_traccar_event_admin,traccar.event.admin,model_traccar_event,fleet_traccar_integration.group_traccar_administrator,1,1,1,1

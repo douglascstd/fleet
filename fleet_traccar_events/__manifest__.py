@@ -1,0 +1,20 @@
+{
+    "name": "Fleet Traccar Events",
+    "summary": "Synchronizes Traccar geofences and stores Traccar events",
+    "version": "18.0.1.0.0",
+    "category": "Fleet",
+    "author": "Ragna, douglascstd@yahoo.com, Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/fleet",
+    "maintainers": ["douglascstd"],
+    "license": "AGPL-3",
+    "development_status": "Alpha",
+    "depends": ["fleet_traccar_integration", "mail"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/traccar_geofence_views.xml",
+        "views/traccar_event_views.xml",
+        "views/traccar_menu.xml",
+    ],
+    "application": False,
+    "installable": True,
+}

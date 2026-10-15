@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_traccar_event_list" model="ir.ui.view">
+        <field name="name">traccar.event.list</field>
+        <field name="model">traccar.event</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0">
+                <header>
+                    <button
+                        name="action_sync_events"
+                        string="Sync Events"
+                        type="object"
+                        class="btn-primary"
+                        display="always"
+                    />
+                </header>
+                <field name="event_time" />
+                <field name="route_day" />
+                <field name="type" />
+                <field name="device_id" />
+                <field name="device_traccar_id" optional="hide" />
+                <field name="vehicle_id" />
+                <field name="geofence_id" />
+                <field name="geofence_traccar_id" optional="show" />
+                <field name="position_id" />
+                <field name="message" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_traccar_event_form" model="ir.ui.view">
+        <field name="name">traccar.event.form</field>
+        <field name="model">traccar.event</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="type" />
+                            <field name="traccar_id" />
+                            <field name="event_time" />
+                            <field name="route_day" />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                        <group>
+                            <field name="device_id" />
+                            <field name="device_traccar_id" />
+                            <field name="vehicle_id" />
+                            <field name="geofence_id" />
+                            <field name="geofence_traccar_id" />
+                            <field name="telemetry_id" />
+                            <field name="position_id" />
+                        </group>
+                    </group>
+                    <group string="Message">
+                        <field name="message" nolabel="1" />
+                    </group>
+                    <group string="Attributes">
+                        <field name="attributes" nolabel="1" />
+                    </group>
+                    <group string="Raw Data">
+                        <field name="raw_data" nolabel="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_traccar_event_search" model="ir.ui.view">
+        <field name="name">traccar.event.search</field>
+        <field name="model">traccar.event</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="type" />
+                <field name="device_id" />
+                <field name="vehicle_id" />
+                <field name="geofence_id" />
+                <field name="geofence_traccar_id" />
+                <field name="route_day" />
+                <filter string="Route Day" name="route_day_filter" date="route_day" />
+                <separator />
+                <filter
+                    string="Type"
+                    name="group_type"
+                    context="{'group_by': 'type'}"
+                />
+                <filter
+                    string="Device"
+                    name="group_device"
+                    context="{'group_by': 'device_id'}"
+                />
+                <filter
+                    string="Vehicle"
+                    name="group_vehicle"
+                    context="{'group_by': 'vehicle_id'}"
+                />
+                <filter
+                    string="Geofence"
+                    name="group_geofence"
+                    context="{'group_by': 'geofence_id'}"
+                />
+                <filter
+                    string="Route Day"
+                    name="group_route_day"
+                    context="{'group_by': 'route_day'}"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_traccar_event" model="ir.actions.act_window">
+        <field name="name">Traccar Events</field>
+        <field name="res_model">traccar.event</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_traccar_event_search" />
+        <field name="context">{"create": false}</field>
+    </record>
+
+    <record id="traccar_event_action_sync" model="ir.actions.server">
+        <field name="name">Sync Traccar Events</field>
+        <field name="model_id" ref="model_traccar_event" />
+        <field name="binding_model_id" ref="model_traccar_event" />
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_sync_events()</field>
+    </record>
+
+    <record id="traccar_event_action_sync_global" model="ir.actions.server">
+        <field name="name">Sync Traccar Events</field>
+        <field name="model_id" ref="model_traccar_event" />
+        <field name="state">code</field>
+        <field name="code">action = env['traccar.event'].action_sync_events()</field>
+    </record>
+</odoo>

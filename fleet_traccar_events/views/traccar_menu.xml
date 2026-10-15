@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_traccar_geofence"
+        name="Geofences"
+        parent="fleet_traccar_integration.menu_fleet_traccar_root"
+        action="action_traccar_geofence"
+        sequence="30"
+        groups="fleet_traccar_integration.group_traccar_administrator"
+    />
+    <menuitem
+        id="menu_traccar_geofence_sync"
+        name="Sync Geofences"
+        parent="fleet_traccar_integration.menu_fleet_traccar_root"
+        action="traccar_geofence_action_sync_global"
+        sequence="31"
+        groups="fleet_traccar_integration.group_traccar_administrator"
+    />
+    <menuitem
+        id="menu_traccar_event"
+        name="Events"
+        parent="fleet_traccar_integration.menu_fleet_traccar_root"
+        action="action_traccar_event"
+        sequence="40"
+        groups="fleet_traccar_integration.group_traccar_administrator"
+    />
+    <menuitem
+        id="menu_traccar_event_sync"
+        name="Sync Events"
+        parent="fleet_traccar_integration.menu_fleet_traccar_root"
+        action="traccar_event_action_sync_global"
+        sequence="41"
+        groups="fleet_traccar_integration.group_traccar_administrator"
+    />
+</odoo>
