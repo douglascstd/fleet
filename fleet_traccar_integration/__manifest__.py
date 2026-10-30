@@ -1,7 +1,7 @@
 {
     "name": "Fleet Traccar Integration",
     "summary": "Fleet and Traccar integration with per-vehicle telemetry",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.1.0",
     "category": "Fleet",
     "author": "Ragna, douglascstd@yahoo.com, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/fleet",
@@ -14,6 +14,7 @@
         "security/ir.model.access.csv",
         "data/fleet_vehicle_model_data.xml",
         "data/ir_cron.xml",
+        "views/traccar_sync_job_views.xml",
         "views/traccar_device_views.xml",
         "views/traccar_telemetry_views.xml",
         "views/fleet_vehicle_views.xml",

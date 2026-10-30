@@ -33,6 +33,7 @@ class FleetVehicle(models.Model):
 
     def action_traccar_sync_locations(self):
         total = 0
+        jobs = self.env["traccar.sync.job"]
         companies = self.mapped("company_id") or self.env.company
         for company in companies:
             self.env["traccar.device"].with_company(company)._sync_company_devices(
@@ -43,12 +44,17 @@ class FleetVehicle(models.Model):
                 lambda device, company=company: device.company_id == company
                 and device.traccar_id
             )
-            total += (
+            created, company_jobs = (
                 self.env["fleet.telemetry"]
                 .with_company(company)
-                ._sync_company_telemetry(company, devices=devices or None)
+                ._traccar_sync_devices(company, devices=devices or None)
             )
+            total += created
+            jobs |= company_jobs
             company.traccar_last_telemetry_sync = fields.Datetime.now()
+        if jobs:
+            # Long gaps are imported in background: show the progress instead
+            return jobs._get_form_action()
         domain = [("provider", "=", "traccar")]
         if self:
             domain.append(("vehicle_id", "in", self.ids))
@@ -67,6 +73,11 @@ class FleetVehicle(models.Model):
                 "sticky": False,
             },
         }
+
+    def action_traccar_import_history(self):
+        return self.env["traccar.history.import.wizard"]._get_wizard_action(
+            self.mapped("traccar_device_id")
+        )
 
     def action_view_traccar_telemetry(self):
         self.ensure_one()

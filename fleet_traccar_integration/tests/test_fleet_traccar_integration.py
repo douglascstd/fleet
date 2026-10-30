@@ -96,6 +96,8 @@ class TestFleetTraccarIntegration(FleetTraccarCommon):
         self.assertFalse(device.telemetry_device_id.vehicle_id)
 
     def test_sync_company_telemetry(self):
+        # A short gap is downloaded immediately
+        self.company.write({"traccar_history_days": 1, "traccar_inline_sync_hours": 48})
         device = self._create_device(traccar_id=42)
         positions = [
             {

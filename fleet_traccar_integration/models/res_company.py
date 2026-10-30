@@ -29,7 +29,22 @@ class ResCompany(models.Model):
     traccar_telemetry_sync_interval = fields.Integer(
         string="Telemetry Sync Interval (min)", default=5
     )
-    traccar_history_days = fields.Integer(default=365)
+    traccar_history_days = fields.Integer(
+        string="Initial History (days)",
+        default=30,
+        help="Period downloaded for a device that has no telemetry yet.",
+    )
+    traccar_history_max_days = fields.Integer(
+        string="Maximum Import Period (days)",
+        default=31,
+        help="Longest period a user can request in a manual history import.",
+    )
+    traccar_inline_sync_hours = fields.Integer(
+        string="Immediate Sync Limit (hours)",
+        default=24,
+        help="Gaps longer than this are downloaded by a background history "
+        "import instead of during the synchronization itself.",
+    )
     traccar_last_device_sync = fields.Datetime(string="Last Device Sync")
     traccar_last_telemetry_sync = fields.Datetime(string="Last Telemetry Sync")
 

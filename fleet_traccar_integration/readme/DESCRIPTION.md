@@ -11,5 +11,7 @@ their telemetry:
   altitude, address and the provider attributes.
 - Synchronization can run from a cron job or on demand from the vehicle
   form, the device form or the settings.
+- History imports: long periods are downloaded in background, one day
+  per device at a time, with progress, notification, cancel and resume.
 - Smart button on the vehicle form to browse its telemetry points, using
   the map view when `fleet_telemetry_maps` is installed.

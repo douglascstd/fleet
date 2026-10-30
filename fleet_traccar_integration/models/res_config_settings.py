@@ -28,6 +28,12 @@ class ResConfigSettings(models.TransientModel):
     traccar_history_days = fields.Integer(
         related="company_id.traccar_history_days", readonly=False
     )
+    traccar_history_max_days = fields.Integer(
+        related="company_id.traccar_history_max_days", readonly=False
+    )
+    traccar_inline_sync_hours = fields.Integer(
+        related="company_id.traccar_inline_sync_hours", readonly=False
+    )
 
     def action_traccar_test_connection(self):
         self.ensure_one()

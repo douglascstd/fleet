@@ -41,6 +41,8 @@ their telemetry:
   altitude, address and the provider attributes.
 - Synchronization can run from a cron job or on demand from the vehicle
   form, the device form or the settings.
+- History imports: long periods are downloaded in background, one day
+  per device at a time, with progress, notification, cancel and resume.
 - Smart button on the vehicle form to browse its telemetry points, using
   the map view when ``fleet_telemetry_maps`` is installed.
 
@@ -64,6 +66,13 @@ To configure the integration:
    ``/api`` at the end), the authentication mode and the credentials.
 3. Use *Test Connection* and *Test API Access* to validate the setup.
 4. Enable the integration and set the synchronization intervals.
+5. Optionally adjust the history limits:
+
+   - *Initial History (days)*: period downloaded for a device without
+     telemetry.
+   - *Immediate Sync Limit (hours)*: longer gaps are imported in
+     background.
+   - *Maximum Import Period (days)*: longest period of a manual import.
 
 Usage
 =====
@@ -72,9 +81,27 @@ Once configured and enabled, the cron job synchronizes devices and
 telemetry automatically. It can also be triggered manually:
 
 - From *Fleet > Configuration > Traccar > Devices*, with the *Update
-  Status* and *Update History* buttons.
-- From a vehicle form, in the *Traccar* page or with the *Update
-  Locations* button.
+  Status* and *Import History* buttons.
+- From a vehicle form, in the *Traccar* page, with the *Update
+  Locations* and *Import History* buttons.
+
+*Import History* asks for the period to download (today, yesterday, last
+7 or 30 days, since the last stored point or a custom period) and runs
+in background, one day per device at a time:
+
+- Follow the imports in *Fleet > Configuration > Traccar > History
+  Imports*, or with the smart button of the device. Each import shows
+  its progress, the points created and updated and the last processed
+  date.
+- The user is notified when the import finishes or fails. A failed or
+  cancelled import can be resumed from the last processed day.
+- Only one import per device runs at a time: asking for a new one opens
+  the import in progress.
+
+*Update Locations* and the cron job download the positions received
+since the last stored point. When this gap is longer than the *Immediate
+Sync Limit*, a history import is created instead, so the synchronization
+never blocks the user.
 
 Received positions are stored in *Fleet > Configuration > Traccar >
 Telemetry*.

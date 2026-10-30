@@ -60,6 +60,16 @@
                                 string="Initial History (days)"
                             />
                             <field name="traccar_history_days" />
+                            <label
+                                for="traccar_inline_sync_hours"
+                                string="Immediate Sync Limit (hours)"
+                            />
+                            <field name="traccar_inline_sync_hours" />
+                            <label
+                                for="traccar_history_max_days"
+                                string="Maximum Import Period (days)"
+                            />
+                            <field name="traccar_history_max_days" />
                         </div>
                     </setting>
                 </block>

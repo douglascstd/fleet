@@ -383,6 +383,8 @@ a <tt class="docutils literal">fleet.telemetry.device</tt>, created remotely on 
 altitude, address and the provider attributes.</li>
 <li>Synchronization can run from a cron job or on demand from the vehicle
 form, the device form or the settings.</li>
+<li>History imports: long periods are downloaded in background, one day
+per device at a time, with progress, notification, cancel and resume.</li>
 <li>Smart button on the vehicle form to browse its telemetry points, using
 the map view when <tt class="docutils literal">fleet_telemetry_maps</tt> is installed.</li>
 </ul>
@@ -415,6 +417,14 @@ Only for development or testing purpose, do not use in production.
 <tt class="docutils literal">/api</tt> at the end), the authentication mode and the credentials.</li>
 <li>Use <em>Test Connection</em> and <em>Test API Access</em> to validate the setup.</li>
 <li>Enable the integration and set the synchronization intervals.</li>
+<li>Optionally adjust the history limits:<ul>
+<li><em>Initial History (days)</em>: period downloaded for a device without
+telemetry.</li>
+<li><em>Immediate Sync Limit (hours)</em>: longer gaps are imported in
+background.</li>
+<li><em>Maximum Import Period (days)</em>: longest period of a manual import.</li>
+</ul>
+</li>
 </ol>
 </div>
 <div class="section" id="usage">
@@ -423,10 +433,27 @@ Only for development or testing purpose, do not use in production.
 telemetry automatically. It can also be triggered manually:</p>
 <ul class="simple">
 <li>From <em>Fleet &gt; Configuration &gt; Traccar &gt; Devices</em>, with the <em>Update
-Status</em> and <em>Update History</em> buttons.</li>
-<li>From a vehicle form, in the <em>Traccar</em> page or with the <em>Update
-Locations</em> button.</li>
+Status</em> and <em>Import History</em> buttons.</li>
+<li>From a vehicle form, in the <em>Traccar</em> page, with the <em>Update
+Locations</em> and <em>Import History</em> buttons.</li>
 </ul>
+<p><em>Import History</em> asks for the period to download (today, yesterday, last
+7 or 30 days, since the last stored point or a custom period) and runs
+in background, one day per device at a time:</p>
+<ul class="simple">
+<li>Follow the imports in <em>Fleet &gt; Configuration &gt; Traccar &gt; History
+Imports</em>, or with the smart button of the device. Each import shows
+its progress, the points created and updated and the last processed
+date.</li>
+<li>The user is notified when the import finishes or fails. A failed or
+cancelled import can be resumed from the last processed day.</li>
+<li>Only one import per device runs at a time: asking for a new one opens
+the import in progress.</li>
+</ul>
+<p><em>Update Locations</em> and the cron job download the positions received
+since the last stored point. When this gap is longer than the <em>Immediate
+Sync Limit</em>, a history import is created instead, so the synchronization
+never blocks the user.</p>
 <p>Received positions are stored in <em>Fleet &gt; Configuration &gt; Traccar &gt;
 Telemetry</em>.</p>
 </div>

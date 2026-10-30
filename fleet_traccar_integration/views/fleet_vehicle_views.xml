@@ -39,6 +39,13 @@
                         string="Update Locations"
                         class="btn-secondary"
                     />
+                    <button
+                        name="action_traccar_import_history"
+                        type="object"
+                        string="Import History"
+                        class="btn-secondary ms-2"
+                        invisible="not traccar_device_id"
+                    />
                 </page>
             </notebook>
         </field>

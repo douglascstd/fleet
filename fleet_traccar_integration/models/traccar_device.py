@@ -55,6 +55,18 @@ class TraccarDevice(models.Model):
     course = fields.Float()
     address = fields.Char()
     active = fields.Boolean(default=True)
+    traccar_sync_job_ids = fields.Many2many(
+        "traccar.sync.job",
+        "traccar_sync_job_device_rel",
+        "device_id",
+        "job_id",
+        string="History Imports",
+        readonly=True,
+    )
+    traccar_sync_job_count = fields.Integer(compute="_compute_traccar_sync_job_count")
+    traccar_sync_job_progress = fields.Float(
+        string="Import Progress", compute="_compute_traccar_sync_job_count"
+    )
 
     _sql_constraints = [
         (
@@ -68,6 +80,16 @@ class TraccarDevice(models.Model):
             "The device Traccar ID must be unique per company.",
         ),
     ]
+
+    @api.depends("traccar_sync_job_ids.state", "traccar_sync_job_ids.window_done")
+    def _compute_traccar_sync_job_count(self):
+        for device in self:
+            jobs = device.traccar_sync_job_ids
+            active_jobs = jobs.filtered(lambda job: job.state in ("queued", "running"))
+            device.traccar_sync_job_count = len(jobs)
+            device.traccar_sync_job_progress = (
+                active_jobs[:1].progress if active_jobs else 0.0
+            )
 
     def _prepare_traccar_payload(self):
         self.ensure_one()
@@ -121,34 +143,37 @@ class TraccarDevice(models.Model):
         }
 
     def action_traccar_sync_telemetry_history(self):
-        total = 0
-        for company in self.mapped("company_id") or self.env.company:
-            devices = self.filtered(
-                lambda device, company=company: device.company_id == company
-            )
-            total += (
-                self.env["fleet.telemetry"]
-                .with_company(company)
-                ._sync_company_telemetry(company, devices=devices)
-            )
-            company.traccar_last_telemetry_sync = fields.Datetime.now()
-        existing = self.env["fleet.telemetry"].search_count(
-            [("provider", "=", "traccar"), ("traccar_device_id", "in", self.ids)]
+        return self.env["traccar.history.import.wizard"]._get_wizard_action(self)
+
+    def action_view_traccar_sync_jobs(self):
+        self.ensure_one()
+        action = self.env["ir.actions.act_window"]._for_xml_id(
+            "fleet_traccar_integration.action_traccar_sync_job"
         )
-        return {
-            "type": "ir.actions.client",
-            "tag": "display_notification",
-            "params": {
-                "title": _("Traccar"),
-                "message": _(
-                    "History updated. New points: %(new)s. Total in Odoo: %(total)s",  # noqa: E501
-                    new=total,
-                    total=existing,
-                ),
-                "type": "success",
-                "sticky": False,
-            },
-        }
+        action["domain"] = [("device_ids", "in", self.ids)]
+        action["context"] = {}
+        return action
+
+    def _traccar_update_last_position(self, position):
+        """Keep the newest known position on the device.
+
+        History imports process old periods, so a position older than the
+        current one must not replace it.
+        """
+        self.ensure_one()
+        fix_time = _traccar_datetime(position.get("fixTime"))
+        if fix_time and self.last_update and fix_time < self.last_update:
+            return
+        self.write(
+            {
+                "latitude": _traccar_number(position.get("latitude")) or 0,
+                "longitude": _traccar_number(position.get("longitude")) or 0,
+                "speed": _traccar_number(position.get("speed")) or 0,
+                "course": _traccar_number(position.get("course")) or 0,
+                "address": position.get("address"),
+                "last_update": fix_time or self.last_update,
+            }
+        )
 
     @api.model
     def _sync_company_devices(self, company):
