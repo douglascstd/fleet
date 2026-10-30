@@ -1,0 +1,989 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_traccar_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-30 01:35+0000\n"
+"PO-Revision-Date: 2026-10-30 01:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/traccar_sync_job.py:0
+msgid "%(count)s devices"
+msgstr "%(count)s dispositivos"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/traccar_sync_job.py:0
+msgid "%(devices)s: %(date_from)s - %(date_to)s"
+msgstr "%(devices)s: %(date_from)s - %(date_to)s"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_device_form
+msgid "<span class=\"o_stat_text\">History Imports</span>"
+msgstr "<span class=\"o_stat_text\">Importações de histórico</span>"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__message_needaction
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__message_needaction
+msgid "Action Needed"
+msgstr "Ação necessária"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__active
+msgid "Active"
+msgstr "Ativo"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__activity_ids
+msgid "Activities"
+msgstr "Atividades"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoração de exceção de atividade"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__activity_state
+msgid "Activity State"
+msgstr "Status da atividade"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícone do tipo de atividade"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__address
+msgid "Address"
+msgstr "Endereço"
+
+#. module: fleet_traccar_integration
+#: model:res.groups,name:fleet_traccar_integration.group_traccar_administrator
+msgid "Administrator"
+msgstr "Administrador"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__message_attachment_count
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__message_attachment_count
+msgid "Attachment Count"
+msgstr "Contagem de anexos"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__res_company__traccar_auth_mode__basic
+msgid "Basic"
+msgstr "Básica"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_history_import_wizard_form
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_sync_job_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_sync_job__state__cancelled
+msgid "Cancelled"
+msgstr "Cancelada"
+
+#. module: fleet_traccar_integration
+#: model:ir.model,name:fleet_traccar_integration.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__company_id
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__company_id
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: fleet_traccar_integration
+#: model:ir.model,name:fleet_traccar_integration.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configurações"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Configure the Traccar URL and password/token."
+msgstr "Configure a URL e a senha/token do Traccar."
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Configure the Traccar username."
+msgstr "Configure o usuário do Traccar."
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Connection successful."
+msgstr "Conexão realizada com sucesso."
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Could not reach Traccar. Check the URL, network and TLS certificate."
+msgstr "Não foi possível acessar o Traccar. Verifique a URL, a rede e o certificado TLS."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__course
+msgid "Course"
+msgstr "Direção"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__create_uid
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__create_uid
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__create_date
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__create_date
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__current_device_id
+msgid "Current Device"
+msgstr "Dispositivo atual"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_history_import_wizard__period__custom
+msgid "Custom"
+msgstr "Personalizado"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_telemetry_search
+msgid "Device"
+msgstr "Dispositivo"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_device_sync_interval
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_config_settings__traccar_device_sync_interval
+msgid "Device Sync Interval (min)"
+msgstr "Intervalo de sincronização de dispositivos (min)"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__device_ids
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__device_ids
+#: model:ir.ui.menu,name:fleet_traccar_integration.menu_traccar_device
+msgid "Devices"
+msgstr "Dispositivos"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Devices (minutes)"
+msgstr "Dispositivos (minutos)"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Devices API access confirmed. Devices returned: %s"
+msgstr "Acesso à API de dispositivos confirmado. Dispositivos retornados: %s"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/traccar_device.py:0
+msgid "Devices status updated."
+msgstr "Status dos dispositivos atualizado."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__display_name
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__display_name
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__display_name
+msgid "Display Name"
+msgstr "Nome exibido"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_sync_job__state__done
+msgid "Done"
+msgstr "Concluída"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Duplicate telemetry merged."
+msgstr "Telemetria duplicada mesclada."
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Enable Integration"
+msgstr "Ativar integração"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_enabled
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_config_settings__traccar_enabled
+msgid "Enable Traccar Integration"
+msgstr "Ativar integração com o Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__error_message
+msgid "Error Message"
+msgstr "Mensagem de erro"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_sync_job__state__failed
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_sync_job_search
+msgid "Failed"
+msgstr "Falhou"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__date_finished
+msgid "Finished On"
+msgstr "Concluída em"
+
+#. module: fleet_traccar_integration
+#: model:ir.model,name:fleet_traccar_integration.model_fleet_telemetry
+msgid "Fleet Telemetry"
+msgstr "Telemetria da frota"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__message_follower_ids
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__message_partner_ids
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (parceiros)"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_device__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Ícone do Font Awesome, ex.: fa-tasks"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__date_from
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__date_from
+msgid "From"
+msgstr "De"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_res_company__traccar_inline_sync_hours
+#: model:ir.model.fields,help:fleet_traccar_integration.field_res_config_settings__traccar_inline_sync_hours
+msgid ""
+"Gaps longer than this are downloaded by a background history import instead "
+"of during the synchronization itself."
+msgstr "Lacunas maiores que isso são baixadas por uma importação de histórico em segundo plano, e não durante a própria sincronização."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__has_message
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__has_message
+msgid "Has Message"
+msgstr "Tem mensagem"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/traccar_sync_job.py:0
+#: model:ir.actions.act_window,name:fleet_traccar_integration.action_traccar_sync_job
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__traccar_sync_job_ids
+#: model:ir.ui.menu,name:fleet_traccar_integration.menu_traccar_sync_job
+msgid "History Imports"
+msgstr "Importações de histórico"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/traccar_sync_job.py:0
+msgid "History import %(job)s failed: %(error)s"
+msgstr "A importação de histórico %(job)s falhou: %(error)s"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/traccar_sync_job.py:0
+msgid ""
+"History imported for %(job)s. New points: %(created)s. Updated points: "
+"%(updated)s."
+msgstr "Histórico importado para %(job)s. Novos pontos: %(created)s. Pontos atualizados: %(updated)s."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__id
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__id
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__activity_exception_icon
+msgid "Icon"
+msgstr "Ícone"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_device__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ícone para indicar uma atividade de exceção."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_device__message_needaction
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_sync_job__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Se marcado, novas mensagens precisam da sua atenção."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_device__message_has_error
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_sync_job__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se marcado, algumas mensagens têm erro de entrega."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_inline_sync_hours
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_config_settings__traccar_inline_sync_hours
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Immediate Sync Limit (hours)"
+msgstr "Limite da sincronização imediata (horas)"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_history_import_wizard_form
+msgid "Import"
+msgstr "Importar"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.fleet_vehicle_view_form_inherit_traccar
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_device_form
+msgid "Import History"
+msgstr "Importar histórico"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__traccar_sync_job_progress
+msgid "Import Progress"
+msgstr "Progresso da importação"
+
+#. module: fleet_traccar_integration
+#: model:ir.actions.server,name:fleet_traccar_integration.traccar_device_action_sync_telemetry_history
+msgid "Import Telemetry History"
+msgstr "Importar histórico de telemetria"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/wizard/traccar_history_import_wizard.py:0
+msgid "Import Traccar History"
+msgstr "Importar histórico do Traccar"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_sync_job_search
+msgid "In Progress"
+msgstr "Em andamento"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_history_days
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_config_settings__traccar_history_days
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Initial History (days)"
+msgstr "Histórico inicial (dias)"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__message_is_follower
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__message_is_follower
+msgid "Is Follower"
+msgstr "É seguidor"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_history_import_wizard__period__last_30_days
+msgid "Last 30 Days"
+msgstr "Últimos 30 dias"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_history_import_wizard__period__last_7_days
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_telemetry_search
+msgid "Last 7 Days"
+msgstr "Últimos 7 dias"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_last_device_sync
+msgid "Last Device Sync"
+msgstr "Última sincronização de dispositivos"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_device_form
+msgid "Last Position"
+msgstr "Última posição"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_last_telemetry_sync
+msgid "Last Telemetry Sync"
+msgstr "Última sincronização de telemetria"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__last_update
+msgid "Last Update"
+msgstr "Última atualização"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__write_uid
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__write_uid
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__write_date
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__write_date
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_fleet_vehicle__traccar_latitude
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__latitude
+msgid "Latitude"
+msgstr "Latitude"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/fleet_vehicle.py:0
+msgid "Locations updated. New points: %(new)s. Total in Odoo: %(total)s"
+msgstr "Localizações atualizadas. Novos pontos: %(new)s. Total no Odoo: %(total)s"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_res_company__traccar_history_max_days
+#: model:ir.model.fields,help:fleet_traccar_integration.field_res_config_settings__traccar_history_max_days
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_history_import_wizard__max_days
+msgid "Longest period a user can request in a manual history import."
+msgstr "Maior período que um usuário pode pedir numa importação manual de histórico."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_fleet_vehicle__traccar_longitude
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__longitude
+msgid "Longitude"
+msgstr "Longitude"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_history_max_days
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_config_settings__traccar_history_max_days
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__max_days
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Maximum Import Period (days)"
+msgstr "Período máximo de importação (dias)"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Merge Duplicate Telemetry"
+msgstr "Mesclar telemetria duplicada"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__message_has_error
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__message_has_error
+msgid "Message Delivery error"
+msgstr "Erro na entrega da mensagem"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__message_ids
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__message_ids
+msgid "Messages"
+msgstr "Mensagens"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Prazo da minha atividade"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_sync_job_search
+msgid "My Imports"
+msgstr "Minhas importações"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__name
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__points_created
+msgid "New Points"
+msgstr "Novos pontos"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Prazo da próxima atividade"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumo da próxima atividade"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo da próxima atividade"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__message_needaction_counter
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de ações"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__message_has_error_counter
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de erros"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_device__message_needaction_counter
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_sync_job__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensagens que exigem ação"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_device__message_has_error_counter
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_sync_job__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensagens com erro de entrega"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__period
+msgid "Period"
+msgstr "Período"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_res_company__traccar_history_days
+#: model:ir.model.fields,help:fleet_traccar_integration.field_res_config_settings__traccar_history_days
+msgid "Period downloaded for a device that has no telemetry yet."
+msgstr "Período baixado para um dispositivo que ainda não tem telemetria."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__current_date
+msgid "Processed Until"
+msgstr "Processado até"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__progress
+msgid "Progress"
+msgstr "Progresso"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_sync_job__state__queued
+msgid "Queued"
+msgstr "Na fila"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__rating_ids
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__rating_ids
+msgid "Ratings"
+msgstr "Avaliações"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__user_id
+msgid "Requested By"
+msgstr "Solicitado por"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_sync_job_list
+msgid "Requested On"
+msgstr "Solicitado em"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__activity_user_id
+msgid "Responsible User"
+msgstr "Usuário responsável"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_sync_job_form
+msgid "Resume"
+msgstr "Retomar"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_telemetry_search
+msgid "Route Day"
+msgstr "Dia da rota"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_sync_job__state__running
+msgid "Running"
+msgstr "Em execução"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/wizard/traccar_history_import_wizard.py:0
+msgid "Select at least one vehicle linked to a Traccar device."
+msgstr "Selecione pelo menos um veículo vinculado a um dispositivo Traccar."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__res_company__traccar_auth_mode__session
+msgid "Session"
+msgstr "Sessão"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_history_import_wizard__period__since_last_point
+msgid "Since Last Point"
+msgstr "Desde o último ponto"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_fleet_vehicle__traccar_speed
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__speed
+msgid "Speed"
+msgstr "Velocidade"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__date_started
+msgid "Started On"
+msgstr "Iniciada em"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__state
+msgid "State"
+msgstr "Estado"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__status
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_sync_job_search
+msgid "Status"
+msgstr "Status"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_device__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Status baseado nas atividades\nAtrasado: a data de vencimento já passou\nHoje: a data da atividade é hoje\nPlanejado: atividades futuras."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__window_done
+msgid "Steps Done"
+msgstr "Etapas concluídas"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Synchronization Intervals"
+msgstr "Intervalos de sincronização"
+
+#. module: fleet_traccar_integration
+#: model:ir.ui.menu,name:fleet_traccar_integration.menu_traccar_telemetry
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.fleet_vehicle_view_form_inherit_traccar
+msgid "Telemetry"
+msgstr "Telemetria"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Telemetry (minutes)"
+msgstr "Telemetria (minutos)"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__telemetry_device_id
+msgid "Telemetry Device"
+msgstr "Dispositivo de telemetria"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_telemetry_sync_interval
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_config_settings__traccar_telemetry_sync_interval
+msgid "Telemetry Sync Interval (min)"
+msgstr "Intervalo de sincronização de telemetria (min)"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Test API Access"
+msgstr "Testar acesso à API"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Test Connection"
+msgstr "Testar conexão"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.constraint,message:fleet_traccar_integration.constraint_traccar_device_traccar_device_unique_company_traccar_id
+msgid "The device Traccar ID must be unique per company."
+msgstr "O ID Traccar do dispositivo deve ser único por empresa."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.constraint,message:fleet_traccar_integration.constraint_traccar_device_traccar_device_unique_company_unique_id
+msgid "The device Unique ID must be unique per company."
+msgstr "O ID único do dispositivo deve ser único por empresa."
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_sync_job_form
+msgid ""
+"The history is being imported in background. You can\n"
+"                        leave this page: you will be notified when it finishes.\n"
+"                        Reload the page to update the progress."
+msgstr "O histórico está sendo importado em segundo plano. Você pode\n                        sair desta página: será avisado quando terminar.\n                        Recarregue a página para atualizar o progresso."
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_history_import_wizard_form
+msgid ""
+"The import runs in background, one day at a time, and can\n"
+"                    be followed in Fleet &gt; Configuration &gt; Traccar &gt;\n"
+"                    History Imports. The longest allowed period is"
+msgstr "A importação roda em segundo plano, um dia por vez, e pode\n                    ser acompanhada em Frota &gt; Configuração &gt; Traccar &gt;\n                    Importações de histórico. O maior período permitido é de"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/traccar_sync_job.py:0
+msgid "The import start date must be before its end date."
+msgstr "A data inicial da importação deve ser anterior à data final."
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/wizard/traccar_history_import_wizard.py:0
+msgid ""
+"The period can not be longer than %(days)s days. Choose a shorter period or "
+"split the import."
+msgstr "O período não pode ser maior que %(days)s dias. Escolha um período menor ou divida a importação."
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/wizard/traccar_history_import_wizard.py:0
+msgid "The start date must be before the end date."
+msgstr "A data inicial deve ser anterior à data final."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_history_import_wizard__date_to
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__date_to
+msgid "To"
+msgstr "Até"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_history_import_wizard__period__today
+msgid "Today"
+msgstr "Hoje"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__res_company__traccar_auth_mode__token
+msgid "Token"
+msgstr "Token"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__window_count
+msgid "Total Steps"
+msgstr "Total de etapas"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/fleet_vehicle.py:0
+#: code:addons/fleet_traccar_integration/models/traccar_device.py:0
+#: code:addons/fleet_traccar_integration/models/traccar_sync_job.py:0
+#: model:ir.module.category,name:fleet_traccar_integration.module_category_traccar
+#: model:ir.ui.menu,name:fleet_traccar_integration.menu_fleet_traccar_root
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.fleet_vehicle_view_form_inherit_traccar
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_telemetry_search
+msgid "Traccar"
+msgstr "Traccar"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "Traccar API"
+msgstr "API do Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_auth_mode
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_config_settings__traccar_auth_mode
+msgid "Traccar Authentication Mode"
+msgstr "Modo de autenticação do Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_base_url
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_config_settings__traccar_base_url
+msgid "Traccar Base URL"
+msgstr "URL base do Traccar"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Traccar Connection"
+msgstr "Conexão com o Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model,name:fleet_traccar_integration.model_traccar_device
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_fleet_telemetry__traccar_device_id
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_fleet_vehicle__traccar_device_id
+msgid "Traccar Device"
+msgstr "Dispositivo Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.actions.act_window,name:fleet_traccar_integration.action_traccar_device
+msgid "Traccar Devices"
+msgstr "Dispositivos Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model,name:fleet_traccar_integration.model_traccar_sync_job
+msgid "Traccar History Import"
+msgstr "Importação de histórico do Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model,name:fleet_traccar_integration.model_traccar_history_import_wizard
+msgid "Traccar History Import Wizard"
+msgstr "Assistente de importação de histórico do Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__traccar_id
+msgid "Traccar ID"
+msgstr "ID Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_fleet_vehicle__traccar_last_update
+msgid "Traccar Last Update"
+msgstr "Última atualização do Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_password
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_config_settings__traccar_password
+msgid "Traccar Password/Token"
+msgstr "Senha/token do Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_fleet_telemetry__traccar_position_id
+msgid "Traccar Position ID"
+msgstr "ID da posição no Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_fleet_vehicle__traccar_device_status
+msgid "Traccar Status"
+msgstr "Status no Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__traccar_sync_job_count
+msgid "Traccar Sync Job Count"
+msgstr "Quantidade de importações do Traccar"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/fleet_vehicle.py:0
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+#: model:ir.actions.act_window,name:fleet_traccar_integration.action_traccar_telemetry
+msgid "Traccar Telemetry"
+msgstr "Telemetria do Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_fleet_vehicle__traccar_telemetry_count
+msgid "Traccar Telemetry Count"
+msgstr "Quantidade de telemetria do Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_company__traccar_username
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_res_config_settings__traccar_username
+msgid "Traccar Username"
+msgstr "Usuário do Traccar"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Traccar authentication failed: %(status)s %(message)s"
+msgstr "Falha na autenticação do Traccar: %(status)s %(message)s"
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Traccar rejected the credentials or access permissions."
+msgstr "O Traccar recusou as credenciais ou as permissões de acesso."
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Traccar returned HTTP %s. Check the URL and permissions."
+msgstr "O Traccar retornou HTTP %s. Verifique a URL e as permissões."
+
+#. module: fleet_traccar_integration
+#. odoo-python
+#: code:addons/fleet_traccar_integration/models/res_company.py:0
+msgid "Traccar returned an invalid API response."
+msgstr "O Traccar retornou uma resposta inválida da API."
+
+#. module: fleet_traccar_integration
+#: model:ir.actions.server,name:fleet_traccar_integration.ir_cron_traccar_sync_job_ir_actions_server
+msgid "Traccar: Process History Imports"
+msgstr "Traccar: processar importações de histórico"
+
+#. module: fleet_traccar_integration
+#: model:ir.actions.server,name:fleet_traccar_integration.ir_cron_traccar_sync_ir_actions_server
+msgid "Traccar: Synchronize Devices and Telemetry"
+msgstr "Traccar: sincronizar dispositivos e telemetria"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_device__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo da atividade de exceção no registro."
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__unique_id
+msgid "Unique ID"
+msgstr "ID único"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.fleet_vehicle_view_form_inherit_traccar
+msgid "Update Locations"
+msgstr "Atualizar localizações"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_device_form
+msgid "Update Status"
+msgstr "Atualizar status"
+
+#. module: fleet_traccar_integration
+#: model:ir.actions.server,name:fleet_traccar_integration.fleet_vehicle_action_traccar_sync_locations
+msgid "Update Traccar Locations"
+msgstr "Atualizar localizações do Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.actions.server,name:fleet_traccar_integration.traccar_device_action_update_status
+msgid "Update Traccar Status"
+msgstr "Atualizar status do Traccar"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__points_updated
+msgid "Updated Points"
+msgstr "Pontos atualizados"
+
+#. module: fleet_traccar_integration
+#: model:ir.model,name:fleet_traccar_integration.model_fleet_vehicle
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__vehicle_id
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_telemetry_search
+msgid "Vehicle"
+msgstr "Veículo"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_device__website_message_ids
+#: model:ir.model.fields,field_description:fleet_traccar_integration.field_traccar_sync_job__website_message_ids
+msgid "Website Messages"
+msgstr "Mensagens do site"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_device__website_message_ids
+#: model:ir.model.fields,help:fleet_traccar_integration.field_traccar_sync_job__website_message_ids
+msgid "Website communication history"
+msgstr "Histórico de comunicação do site"
+
+#. module: fleet_traccar_integration
+#: model:ir.model.fields.selection,name:fleet_traccar_integration.selection__traccar_history_import_wizard__period__yesterday
+msgid "Yesterday"
+msgstr "Ontem"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.view_traccar_history_import_wizard_form
+msgid "days."
+msgstr "dias."
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "https://traccar.example.com"
+msgstr "https://traccar.example.com"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "password or token"
+msgstr "senha ou token"
+
+#. module: fleet_traccar_integration
+#: model_terms:ir.ui.view,arch_db:fleet_traccar_integration.res_config_settings_view_form_inherit_traccar
+msgid "username"
+msgstr "usuário"
