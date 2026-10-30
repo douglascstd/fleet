@@ -30,6 +30,93 @@
         </field>
     </record>
 
+    <record id="view_fleet_telemetry_search_map" model="ir.ui.view">
+        <field name="name">fleet.telemetry.search.map</field>
+        <field name="model">fleet.telemetry</field>
+        <field name="inherit_id" ref="fleet_telemetry.view_fleet_telemetry_search" />
+        <field name="arch" type="xml">
+            <filter name="last_7_days" position="after">
+                <separator />
+                <filter
+                    string="Today and Yesterday"
+                    name="telemetry_period_today_yesterday"
+                    domain="[
+                        ('fix_time', '&gt;=', datetime.datetime.combine(context_today() - relativedelta(days=1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                        ('fix_time', '&lt;', datetime.datetime.combine(context_today() + relativedelta(days=1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                    ]"
+                />
+                <filter
+                    string="Today"
+                    name="telemetry_period_today"
+                    domain="[
+                        ('fix_time', '&gt;=', datetime.datetime.combine(context_today(), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                        ('fix_time', '&lt;', datetime.datetime.combine(context_today() + relativedelta(days=1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                    ]"
+                />
+                <filter
+                    string="Yesterday"
+                    name="telemetry_period_yesterday"
+                    domain="[
+                        ('fix_time', '&gt;=', datetime.datetime.combine(context_today() - relativedelta(days=1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                        ('fix_time', '&lt;', datetime.datetime.combine(context_today(), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                    ]"
+                />
+                <filter
+                    string="This Week"
+                    name="telemetry_period_this_week"
+                    domain="[
+                        ('fix_time', '&gt;=', datetime.datetime.combine(context_today() + relativedelta(weeks=-1, days=1, weekday=0), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                        ('fix_time', '&lt;', datetime.datetime.combine(context_today() + relativedelta(days=1, weekday=0), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                    ]"
+                />
+                <filter
+                    string="Last Week"
+                    name="telemetry_period_last_week"
+                    domain="[
+                        ('fix_time', '&gt;=', datetime.datetime.combine(context_today() + relativedelta(weeks=-2, days=1, weekday=0), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                        ('fix_time', '&lt;', datetime.datetime.combine(context_today() + relativedelta(weeks=-1, days=1, weekday=0), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                    ]"
+                />
+                <filter
+                    string="This Month"
+                    name="telemetry_period_this_month"
+                    domain="[
+                        ('fix_time', '&gt;=', datetime.datetime.combine(context_today() + relativedelta(day=1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                        ('fix_time', '&lt;', datetime.datetime.combine(context_today() + relativedelta(day=1, months=1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                    ]"
+                />
+                <filter
+                    string="Last Month"
+                    name="telemetry_period_last_month"
+                    domain="[
+                        ('fix_time', '&gt;=', datetime.datetime.combine(context_today() + relativedelta(day=1, months=-1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                        ('fix_time', '&lt;', datetime.datetime.combine(context_today() + relativedelta(day=1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                    ]"
+                />
+                <filter
+                    string="This Year"
+                    name="telemetry_period_this_year"
+                    domain="[
+                        ('fix_time', '&gt;=', datetime.datetime.combine(context_today() + relativedelta(day=1, month=1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                        ('fix_time', '&lt;', datetime.datetime.combine(context_today() + relativedelta(day=1, month=1, years=1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                    ]"
+                />
+            </filter>
+        </field>
+    </record>
+
+    <!-- The map actions load up to 5000 points: keep the list paginated -->
+    <record id="view_fleet_telemetry_list_map" model="ir.ui.view">
+        <field name="name">fleet.telemetry.list.map</field>
+        <field name="model">fleet.telemetry</field>
+        <field name="inherit_id" ref="fleet_telemetry.view_fleet_telemetry_list" />
+        <field name="arch" type="xml">
+            <list position="attributes">
+                <attribute name="limit">80</attribute>
+            </list>
+        </field>
+    </record>
+
     <record id="action_fleet_telemetry_map" model="ir.actions.act_window">
         <field name="name">Telemetry Map</field>
         <field name="res_model">fleet.telemetry</field>
@@ -38,7 +125,9 @@
             name="search_view_id"
             ref="fleet_telemetry.view_fleet_telemetry_search"
         />
-        <field name="context">{"create": false}</field>
+        <field
+            name="context"
+        >{"create": false, "search_default_telemetry_period_today_yesterday": 1}</field>
         <field name="limit">5000</field>
     </record>
 
@@ -71,7 +160,9 @@
 
     <record id="fleet_telemetry.action_fleet_telemetry" model="ir.actions.act_window">
         <field name="view_mode">leaflet_map,list,form</field>
-        <field name="context">{"create": false}</field>
+        <field
+            name="context"
+        >{"create": false, "search_default_telemetry_period_today_yesterday": 1}</field>
         <field name="limit">5000</field>
     </record>
 

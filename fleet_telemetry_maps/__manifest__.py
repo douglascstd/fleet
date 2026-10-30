@@ -1,7 +1,7 @@
 {
     "name": "Fleet Telemetry Maps",
     "summary": "Map views for generic fleet telemetry",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.1.0",
     "category": "Fleet",
     "author": "Ragna, douglascstd@yahoo.com, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/fleet",
@@ -15,6 +15,9 @@
     "assets": {
         "web.assets_backend": [
             "fleet_telemetry_maps/static/src/views/leaflet_map/fleet_telemetry_route_map_patch.esm.js",
+            "fleet_telemetry_maps/static/src/views/leaflet_map/leaflet_map_search_bar_patch.esm.js",
+            "fleet_telemetry_maps/static/src/views/leaflet_map/leaflet_map_controller.xml",
+            "fleet_telemetry_maps/static/src/search/telemetry_period_filter_patch.esm.js",
         ],
     },
     "application": False,
